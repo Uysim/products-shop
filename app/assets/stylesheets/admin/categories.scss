@@ -1,0 +1,7 @@
+body[id='dashboard-categories-index']{
+  .sortable {
+    a {
+      @include margin(null 10px);
+    }
+  }
+}

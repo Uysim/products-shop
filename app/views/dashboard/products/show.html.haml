@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @product.name
+%p
+  %strong Price:
+  = @product.price
+%p
+  %strong Category:
+  = @product.category.name
+%p
+  %strong Description:
+  = @product.description
+= link_to 'Edit', edit_admin_category_product_url(@category,@product)
+|
+= link_to 'Back', admin_category_products_url(@category,@product)

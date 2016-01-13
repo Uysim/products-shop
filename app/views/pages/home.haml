@@ -1,0 +1,7 @@
+%section#products.container
+  - @main_categories.each do |main_category|
+    .row
+      .col-xs-12
+        %h3= main_category.name
+      - 4.times do |product|
+        = render 'pages/home/products'

@@ -1,0 +1,9 @@
+= simple_form_for(@category, url: admin_categories_url) do |f|
+  = f.error_notification
+  = f.input :parent_id, as: :hidden, input_html: { value: params[:parent_id]}
+  .form-group
+    = f.input :name, input_html: { class: 'form-control'}
+  .form-group
+    = f.input :description, input_html: { class: 'form-control'}
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'
