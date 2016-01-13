@@ -19,15 +19,7 @@ gem 'jquery-ui-rails',    '~> 5.0.5'
 gem 'font-awesome-rails', '~> 4.5.0'
 gem 'bourbon',            '~> 4.2.6'
 gem 'active_model_serializers', '~> 0.9.4'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-angular',           '~> 1.4.8'
-  gem 'rails-assets-angular-ui-router', '~> 0.2.15'
-  gem 'rails-assets-angular-animate',   '~> 1.4.8'
-  gem 'rails-assets-angular-aria',      '~> 1.4.8'
-  gem 'rails-assets-angular-messages',  '~> 1.4.8'
-  gem 'rails-assets-angular-material',  '~> 1.0.1'
-end
+gem 'dotenv-rails'
 
 
 group :development, :test do
