@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'pages#home'
   devise_for :admins
+
+  resources :categories, only: [:show] do
+    resources :products, only: [:index, :show]
+  end
+
   namespace :dashboard, as: :admin do
     get '/', to: 'admin#index'
     resources :categories do
@@ -11,10 +16,5 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api do
-    resources :categories do
 
-      resources :products
-    end
-  end
 end
