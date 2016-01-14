@@ -6,14 +6,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"} GTC Computer
+      = link_to 'GTC Computer', root_url, class: 'navbar-brand'
     #gtc-navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li= link_to 'Desktop', '#'
-        %li= link_to 'Laptop', '#'
-        %li= link_to 'Accessories', '#'
-        %li= link_to 'Printer', '#'
-        %li= link_to 'Services', '#'
+        %li= link_to 'Desktop', category_products_url(@main_categories.first)
+        %li= link_to 'Laptop', category_products_url(@main_categories.first)
+        %li= link_to 'Accessories', category_products_url(@main_categories.first)
+        %li= link_to 'Printer', category_products_url(@main_categories.first)
+        %li= link_to 'Services', category_products_url(@main_categories.first)
       %ul.nav.navbar-nav.navbar-right
         %li= link_to 'Contact', '#'
         %li= link_to 'About', '#'
