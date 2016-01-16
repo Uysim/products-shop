@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
   devise_for :admins
-
+  get 'contact', to: 'pages#contact'
+  get 'about', to: 'pages#about'
   resources :categories, only: [:show] do
     resources :products, only: [:index, :show]
   end

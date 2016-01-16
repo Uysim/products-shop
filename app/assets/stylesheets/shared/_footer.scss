@@ -1,0 +1,26 @@
+footer.footer{
+  $background: $navbar-inverse-bg;
+  $color: $navbar-inverse-color;
+  @include background($background);
+  @include padding(10px);
+  color: $color;
+  .divider {
+    @include border-style(solid);
+    @include border-width(0px 0px 1px 0px);
+    @include border-color($color);
+    @include margin(10px null);
+    height: 1px;
+
+  }
+  .footer-title {
+    font-weight: bold;
+  }
+  span.icon {
+    font-size: 18px;
+    @include margin(null 10px null null);
+  }
+  p:hover, h4:hover {
+    color: white;
+  }
+
+}

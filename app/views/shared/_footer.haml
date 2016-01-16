@@ -1,0 +1,50 @@
+%footer.footer.footer-inverse
+  .container
+    .col-xs-12.col-sm-4
+      %h4.footer-title Contact Us
+      .divider
+      %p
+        %span.icon= fa_icon 'phone'
+        012 401 301
+      %p
+        %span.icon= fa_icon 'phone'
+        015 77 99 84
+      %p
+        %span.icon= fa_icon 'phone'
+        097 77 444 56
+      %p
+        %span.icon= fa_icon 'envelope'
+        info@glowtechcambodia.com
+      %p
+        %span.icon= fa_icon 'map-marker'
+        = "#89A , St 5c , Tek Thla , Sen Sok ( in front of Chea Sim Samaky High School Go Down From St : 271 25m )"
+
+
+    .col-xs-12.col-sm-4
+      %h4.footer-title Services
+      .divider
+      %p
+        %strong Sale :
+        %br
+        %span Laptops, Desktops, LCD Monitors, Camera Security And Accessories
+      %p
+        %strong Services :
+        %br
+        %span Repair Computer Laptops, Desktops, LCDs and Laptop Batteries
+        %br
+        %span CCTV Camera Secirotu and Network Installation
+
+    .col-xs-12.col-sm-4
+      %h4.footer-title Like Us
+      .divider
+      .fb-page{"data-adapt-container-width" => "true", "data-hide-cover" => "false", "data-href" => "https://www.facebook.com/glowtechcambodia", "data-show-facepile" => "true"}
+
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=960459810664610";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
