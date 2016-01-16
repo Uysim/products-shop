@@ -1,0 +1,26 @@
+body[id='pages-about'] {
+  section#about{
+    .map-responsive {
+      overflow: hidden;
+      position: relative;
+      min-height: 350px;
+    }
+    iframe {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      height:100%;
+      width:100%;
+      border: 0;
+    }
+    .divider {
+      $color: $navbar-inverse-color;
+      @include border-style(solid);
+      @include border-width(0px 0px 1px 0px);
+      @include border-color($color);
+      @include margin(10px null);
+      height: 1px;
+    }
+  }
+}

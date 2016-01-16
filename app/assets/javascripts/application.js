@@ -6,7 +6,7 @@
 //= require dashboard/namespace
 //= require dashboard/util
 //= require dashboard/common
-
+//= require dashboard/fanpage
 //= require dashboard/categories_index
 
 //= require dashboard/initializer
