@@ -3,10 +3,9 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require dashboard/namespace
-//= require dashboard/util
-//= require dashboard/common
-//= require dashboard/fanpage
-//= require dashboard/categories_index
+//= require namespace
+//= require util
+//= require common
+//= require fanpage
 
-//= require dashboard/initializer
+//= require initializer

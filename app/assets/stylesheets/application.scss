@@ -2,16 +2,10 @@
 @import "bootstrap";
 @import 'font-awesome';
 @import 'bourbon';
-@import "jquery-ui";
 
 @import "shared/logo";
 @import "shared/panel";
 @import "shared/footer";
-
-
-
-@import "admin/sidebar";
-@import "admin/categories";
 
 @import 'pages/about';
 @import "products/show";

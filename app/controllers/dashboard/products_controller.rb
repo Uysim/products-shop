@@ -13,6 +13,7 @@ module Dashboard
 
     def new
       @product = @category.products.new
+      @product.images.build
     end
 
     def edit
@@ -46,7 +47,10 @@ module Dashboard
       end
 
       def product_params
-        params.require(:product).permit(:name, :price, :category_id, :description)
+        params.require(:product).permit(
+          :name, :price, :category_id, :description,
+          image_attributes: [:id, :file, :_destroy],
+      )
       end
 
       def set_category
