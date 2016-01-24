@@ -1,0 +1,5 @@
+$phone: "(max-width: #{$screen-xs-max})";
+$tablet: "(min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})";
+$desktop-up: "(min-width: #{$screen-md-min})";
+$tablet-up: "(min-width: #{$screen-sm-min})";
+$desktop-down: "(max-width: #{$screen-sm-max})";

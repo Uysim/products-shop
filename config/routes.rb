@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   devise_for :admins
   get 'about', to: 'pages#about'
+  get 'search', to: 'pages#search'
   resources :categories, only: [:show] do
     resources :products, only: [:index, :show]
   end
@@ -12,7 +13,11 @@ Rails.application.routes.draw do
       collection do
         post 'order'
       end
-      resources :products
+      resources :products do
+        collection do
+          post 'order'
+        end
+      end
     end
   end
 

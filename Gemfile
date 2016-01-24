@@ -21,11 +21,23 @@ gem 'font-awesome-rails', '~> 4.5.0'
 gem 'bourbon',            '~> 4.2.6'
 gem 'active_model_serializers', '~> 0.9.4'
 gem 'dotenv-rails'
-
+gem 'nokogiri'
+gem 'mini_magick',        '~> 4.3.6'
+gem 'fog'
+gem 'asset_sync'
+gem 'will_paginate',      '~> 3.0.6'
+gem "cocoon"
+gem "wysiwyg-rails"
 
 group :development, :test do
   gem 'pry'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :development do
+  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rvm'
 end

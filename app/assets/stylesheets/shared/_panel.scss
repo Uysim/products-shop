@@ -5,8 +5,19 @@
   @include border-left-radius(0px);
   @include border-width(0px);
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  & a:hover {
+    text-decoration: none;
+  }
   img {
+    width: 100%;
     @include padding(-15px);
+  }
+  h4 {
+    min-height: 40px;
+  }
+  .summary {
+    min-height: 45px;
+    color: #333333;
   }
 }
 

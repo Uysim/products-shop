@@ -12,10 +12,11 @@ test:
   database: "<%= ENV['DATABASE_NAME'] %>_test"
 
 production:
-  <<: *default
-  host: <%= ENV['DATABASE_URL'] %>
-production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: "<%= ENV['DATABASE_NAME'] %>_production"
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: 5432
+  pool: 5

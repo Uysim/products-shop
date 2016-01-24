@@ -1,6 +1,6 @@
 footer.footer{
-  $background: $navbar-inverse-bg;
-  $color: $navbar-inverse-color;
+  $background: $blue;
+  $color: white;
   @include background($background);
   @include padding(10px);
   color: $color;

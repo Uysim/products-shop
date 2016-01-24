@@ -1,0 +1,10 @@
+%section#categories
+  %h1 Category
+  .row
+    .col-xs-12.col-sm-6.col-sm-push-3.col-md-4.col-md-push-4
+      = render 'dashboard/shared/category_panel', heading: 'Category', categories: @main_categories, new_url: new_admin_category_url
+  / %h1 Subcategories
+  / .row
+  /  - @main_categories.each do |mc|
+  /    .col-xs-12.col-sm-6.col-md-4
+  /      = render 'dashboard/shared/category_panel', heading: 'Category', categories: mc.subcategories, new_url: new_admin_category_url(parent_id: mc.id)
