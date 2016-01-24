@@ -1,4 +1,4 @@
-%nav.navbar.navbar-inverse.navbar-fixed-top
+%nav.navbar.navbar-default.navbar-fixed-top
   .container
     .navbar-header
       %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#gtc-navbar", "data-toggle" => "collapse", :type => "button"}
@@ -9,10 +9,7 @@
       = link_to 'GTC Computer', root_url, class: 'navbar-brand'
     #gtc-navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li= link_to 'Desktop', category_products_url(@main_categories.first)
-        %li= link_to 'Laptop', category_products_url(@main_categories.first)
-        %li= link_to 'Accessories', category_products_url(@main_categories.first)
-        %li= link_to 'Printer', category_products_url(@main_categories.first)
-        %li= link_to 'Services', category_products_url(@main_categories.first)
+        - @main_categories.each do |mc|
+          %li= link_to mc.name, category_products_url(mc)
       %ul.nav.navbar-nav.navbar-right
         %li= link_to 'About', about_url

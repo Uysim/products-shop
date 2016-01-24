@@ -1,8 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "froala_editor.min";
+@import "froala_style.min";
+@import "plugins/char_counter.min";
+@import "plugins/code_view.min";
+@import "plugins/colors.min";
+@import "plugins/emoticons.min";
+@import "plugins/fullscreen.min";
+@import "plugins/line_breaker.min";
+@import "plugins/table.min";
+
 @import 'font-awesome';
 @import 'bourbon';
 @import "jquery-ui";
 
 @import "admin/sidebar";
 @import "admin/categories";
+@import "admin/products";

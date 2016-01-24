@@ -2,7 +2,7 @@
   .row
     .col-xs-12.text-center
       %h1
-        %strong= @category.name
+        %strong= "Result for #{params[:search].try(:[], 'query')}"
     .col-xs-12.text-center
       = pagination_links @products
     - @products.each do |product|

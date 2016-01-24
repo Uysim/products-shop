@@ -1,0 +1,19 @@
+section#search-form {
+  .input {
+    display: inline;
+  }
+
+  input {
+    @include border-top-radius(0px);
+    @include border-right-radius(0px);
+    @include border-bottom-radius(0px);
+    @include border-left-radius(0px);
+  }
+
+  button {
+    @include border-top-radius(0px);
+    @include border-right-radius(0px);
+    @include border-bottom-radius(0px);
+    @include border-left-radius(0px);
+  }
+}

@@ -3,5 +3,5 @@
     .row
       .col-xs-12
         %h3= main_category.name
-      - 4.times do |product|
-        = render 'pages/home/products'
+      - main_category.products.rows(2).each do |product|
+        = render 'shared/product', product: product

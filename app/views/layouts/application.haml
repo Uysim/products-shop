@@ -5,13 +5,14 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:charset => "UTF-8"}/
-    %title Gtc
+    %title GTC Computer
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{ id: body_id, class: body_class }
     = render 'shared/navbar'
     = render 'shared/logo'
+    = render 'shared/search'
     = yield
     = render 'shared/footer'
 

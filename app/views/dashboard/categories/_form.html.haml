@@ -1,4 +1,4 @@
-= simple_form_for(@category, url: admin_categories_url) do |f|
+= simple_form_for(@category, url: @category.new_record? ? admin_categories_url : admin_category_url(@category)) do |f|
   = f.error_notification
   = f.input :parent_id, as: :hidden, input_html: { value: params[:parent_id]}
   .form-group

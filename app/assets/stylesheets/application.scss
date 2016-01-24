@@ -3,12 +3,18 @@
 @import 'font-awesome';
 @import 'bourbon';
 
+@import 'variable/color';
+
+@import "shared/media";
 @import "shared/logo";
 @import "shared/panel";
 @import "shared/footer";
+@import "shared/navbar";
+@import "shared/search";
 
 @import 'pages/about';
 @import "products/show";
+
 
 
 

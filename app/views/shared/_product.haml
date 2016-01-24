@@ -1,0 +1,8 @@
+.col-xs-12.col-sm-6.col-md-3
+  .panel.panel-default.panel-card.panel-hover
+    = link_to [product.category, product], "data-toggle"=>"tooltip", title: product.name do
+      = image_tag product.images.first.file.thumb.url, class: 'img-responsive'
+      .panel-body
+        %h4= product.name
+        %strong.text-danger= "#{product.price} $"
+        %p.summary= product.summary
