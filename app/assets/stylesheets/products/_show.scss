@@ -2,4 +2,15 @@ section#product {
   img {
     width: 100%;
   }
+  .sold {
+    @include border-top-radius(0px);
+    @include border-right-radius(0px);
+    @include border-bottom-radius(0px);
+    @include border-left-radius(0px);
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    font-size: 20px;
+    z-index: 99999;
+  }
 }
