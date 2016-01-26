@@ -8,11 +8,11 @@
     %title GTC Computer
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
   %body{ id: body_id, class: body_class }
-    = render 'shared/navbar'
-    = render 'shared/logo'
-    = render 'shared/search'
+    = render 'shared/header'
+    = navbar
     = yield
     = render 'shared/footer'
 
