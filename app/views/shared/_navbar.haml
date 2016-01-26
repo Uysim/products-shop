@@ -1,14 +1,15 @@
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container
+%nav.navbar.navbar-default.container
+  .container-fluid
     .navbar-header
       %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#gtc-navbar", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'GTC Computer', root_url, class: 'navbar-brand'
+      .navbar-brand.visible-xs.visible-sm GTC Computer
     #gtc-navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
+        %li= link_to 'Home', root_url
         - @main_categories.each do |mc|
           %li= link_to mc.name, category_products_url(mc)
       %ul.nav.navbar-nav.navbar-right

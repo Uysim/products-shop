@@ -1,0 +1,59 @@
+section#header {
+  position: relative;
+  img.logo {
+    margin: 0 auto;
+  }
+  .contact {
+    @media #{$phone} {
+      h3 {
+        font-size: 16px;
+        @include margin(10px null);
+      }
+    }
+  }
+  .full-name {
+    @media #{$phone} {
+      font-size: 12px;
+    }
+  }
+  .search {
+    // @media #{$desktop-down}{
+    //   text-align: center;
+    // }
+    @media #{$desktop-up}{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      form {
+        float: right;
+      }
+    }
+    form {
+      @include margin(10px null);
+      @media #{$tablet} {
+        float: right;
+      }
+    }
+    .input {
+      display: inline;
+    }
+
+    input {
+      @media #{$phone}{
+        display: inline-block;
+        width: 85%;
+      }
+      @include border-top-radius(0px);
+      @include border-right-radius(0px);
+      @include border-bottom-radius(0px);
+      @include border-left-radius(0px);
+    }
+
+    button {
+      @include border-top-radius(0px);
+      @include border-right-radius(0px);
+      @include border-bottom-radius(0px);
+      @include border-left-radius(0px);
+    }
+  }
+}

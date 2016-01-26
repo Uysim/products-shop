@@ -11,14 +11,15 @@
 @import "shared/footer";
 @import "shared/navbar";
 @import "shared/search";
+@import "shared/header";
 
 @import 'pages/about';
 @import "products/show";
 
 
-
-
-
-body {
-  @include padding($navbar-height null null null)
+body:before {
+  @include background(asset-url('item_pic.png'));
+  position: fixed;
+  left: 0px;
+  top: 0px;
 }
