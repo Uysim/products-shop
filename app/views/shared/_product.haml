@@ -2,7 +2,7 @@
   .panel.panel-default.panel-card.panel-hover
     - if product.sold?
       %span.label.label-danger.sold Sold
-    = link_to [product.category, product], "data-toggle"=>"tooltip", title: product.name do
+    = link_to [product.category, product] do
       = image_tag product.images.first.file.thumb.url, class: 'img-responsive'
       .panel-body
         %h4= product.name

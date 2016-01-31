@@ -1,11 +1,6 @@
 %section#products.container
+  %h1.text-center
+    %strong= @category.name
   .row
-    .col-xs-12.text-center
-      %h1
-        %strong= @category.name
-    .col-xs-12.text-center
-      = pagination_links @products
-    - @products.each do |product|
+    - @category.products.each do |product|
       = render 'shared/product', product: product
-    .col-xs-12.text-center
-      = pagination_links @products

@@ -1,0 +1,16 @@
+%section#products.container
+  %h1.text-center
+    %strong= @category.name
+  .row
+    - @category.subcategories.each do |category|
+      - if category.products.any?
+        .col-xs-12.category-title
+          %h3.label-category= category.name
+        - category.products.each do |product|
+          = render 'shared/product', product: product
+        .col-xs-12.devider
+    - if @category.products.any?
+      .col-xs-12.category-title
+        %h3.label-category Other
+      - @category.products.each do |product|
+        = render 'shared/product', product: product

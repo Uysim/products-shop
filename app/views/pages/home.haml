@@ -1,7 +1,8 @@
 %section#products.container
   - @main_categories.each do |main_category|
     .row
-      .col-xs-12
-        %h3= main_category.name
-      - main_category.products.rows(2).each do |product|
+      .col-xs-12.category-title
+        %h3.label-category= main_category.name
+      - main_category.feature_products.each do |product|
         = render 'shared/product', product: product
+      .col-xs-12.devider

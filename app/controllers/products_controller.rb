@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
 
   def index
-    @products = @category.products.paginate(page: params[:page], per_page: 32)
+    render :index_with_sub if @category.subcategories.any?
+
   end
 
   def show

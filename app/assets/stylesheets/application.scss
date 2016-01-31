@@ -14,12 +14,7 @@
 @import "shared/header";
 
 @import 'pages/about';
+@import 'pages/home';
+
 @import "products/show";
-
-
-body:before {
-  @include background(asset-url('item_pic.png'));
-  position: fixed;
-  left: 0px;
-  top: 0px;
-}
+@import "products/index";

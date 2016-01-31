@@ -42,7 +42,7 @@ module Dashboard
     end
 
     def order
-      order_params[:ids].reverse.each do |id|
+      order_params[:ids].each do |id|
         @category.products.find(id).touch
       end
       redirect_to admin_category_products_url(@category)
@@ -55,7 +55,7 @@ module Dashboard
 
       def product_params
         params.require(:product).permit(
-          :name, :price, :category_id, :description, :summary, :sold,
+          :name, :price, :category_id, :description, :summary, :sold, :feature,
           fields_attributes: [:id, :name, :value,:_destroy],
           images_attributes: [:id, :file, :_destroy]
       )

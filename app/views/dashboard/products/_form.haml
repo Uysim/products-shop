@@ -33,10 +33,23 @@
         %br
         %button.btn.btn-default{type: 'button', 'data-toggle'=>'collapse', 'data-target'=>'#category-association', onclick: "$(this).hide();"} Change Category
         #category-association.collapse
-          = f.association :category, as: :radio_buttons
+          %ul.nav.nav-tabs
+            - @main_categories.each_with_index do |mc, index|
+              %li{ class: index.zero? ? "active" : nil }
+                = link_to mc.name, "#category-#{mc.id}", "data-toggle" => "tab"
+          .tab-content
+            - @main_categories.each_with_index do |mc ,index|
+              .tab-pane.fade{ class: index.zero? ? "active in" : nil, id: "category-#{mc.id}" }
+                = f.association :category, collection: mc.subcategories,label: false, as: :radio_buttons
+                = f.radio_button :category_id, mc.id
+                = f.label :other
+
   .form-group
     .col-xs-12
       = f.input :sold
+  .form-group
+    .col-xs-12
+      = f.input :feature
   .form-group
     .col-xs-12
       %br
