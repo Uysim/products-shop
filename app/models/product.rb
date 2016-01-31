@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
 
 
   scope :rows, lambda { |n| limit(n*4) }
+  scope :of, lambda { |category_ids| where(category_id: category_ids) }
+  scope :feature, -> { where(feature: true) }
 
   def related
     category.products.where("id != #{id}").rows(1)

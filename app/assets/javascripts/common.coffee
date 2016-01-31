@@ -1,7 +1,6 @@
 GTC.Common =
   init: ->
     @menuToggle()
-    @tooltip()
     @navbar()
 
   menuToggle: ->
@@ -9,8 +8,6 @@ GTC.Common =
       e.preventDefault()
       $('#wrapper').toggleClass 'toggled'
 
-  tooltip: ->
-    $('[data-toggle="tooltip"]').tooltip()
 
   navbar: ->
     navbar = $('nav.navbar')

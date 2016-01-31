@@ -15,12 +15,12 @@ end
 
 main_cats = [
   {
-    name: 'Laptop'
-    # subcategories: ['Accer', 'Dell', 'Mac']
+    name: 'Laptop',
+    subcategories: ['Accer', 'Dell', 'Mac']
   },
   {
-    name: 'Desktop'
-    # subcategories: ['Accer', 'Dell', 'Mac']
+    name: 'Desktop',
+    subcategories: ['Accer', 'Dell', 'Mac']
   },
   {
     name: 'Accessories'
@@ -42,7 +42,7 @@ main_cats.each do |main|
   end
 end
 Category.all.each_with_index do |cate,index|
-  64.times do |i|
+  8.times do |i|
     product = cate.products.new(name: "Product-#{index}-#{i}", price: 888)
     desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     product.description = desc

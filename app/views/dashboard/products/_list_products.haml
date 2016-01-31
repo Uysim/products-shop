@@ -1,0 +1,24 @@
+%h1= "Listing of #{category.name}"
+
+= simple_form_for  :products ,url: order_admin_category_products_url(category) do |f|
+  = link_to 'New Product', new_admin_category_product_url(category), class: 'btn btn-primary', data: { no_turbolink: true }
+
+  = f.button :submit, 'Reorder', class: 'btn btn-primary'
+  %br/
+  %table.table.table-strip.table-hover
+    %thead
+      %tr
+        %th ID
+        %th Name
+        %th{colspan: "3"} Action
+    %tbody.sortable
+      - category.products.each do |product|
+        %tr
+
+          %th.dragable
+            = f.input :ids,as: :hidden, multiple: true, input_html: { multiple: true, value: product.id }
+            = product.id
+          %td= product.name
+          %td= link_to 'Show', admin_category_product_url(category, product)
+          %td= link_to 'Edit', edit_admin_category_product_url(category, product)
+          %td= link_to 'Destroy', admin_category_product_url(category, product), method: :delete, data: { confirm: 'Are you sure?' }
