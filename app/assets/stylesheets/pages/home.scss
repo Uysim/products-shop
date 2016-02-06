@@ -18,6 +18,9 @@ body[id='pages-home'] {
     @include border-right-radius(0px);
     @include border-bottom-radius(0px);
     @include border-left-radius(0px);
+    a {
+      color: white;
+    }
   }
   .devider {
     @include margin(20px);

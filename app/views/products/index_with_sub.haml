@@ -6,11 +6,11 @@
       - if category.products.any?
         .col-xs-12.category-title
           %h3.label-category= category.name
-        - category.products.includes(:products).each do |product|
-          = render 'shared/product', product: product
+        - category.products.includes(:images).each do |product|
+          = render 'shared/product', product: product, category: category
         .col-xs-12.devider
     - if @category.products.any?
       .col-xs-12.category-title
         %h3.label-category Other
-      - @category.products.each do |product|
-        = render 'shared/product', product: product
+      - @category.products.includes(:images).each do |product|
+        = render 'shared/product', product: product, category: @category
