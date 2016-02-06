@@ -3,9 +3,10 @@ class Category < ActiveRecord::Base
   has_many :products,-> { order(:updated_at)}, dependent: :destroy
   belongs_to :parent, class_name: 'Category'
 
-  def self.main_categories
-    where(parent: nil)
-  end
+  scope :main_categories, -> { where(parent: nil) }
+  # def self.main_categories
+  #   where(parent: nil)
+  # end
 
   def main?
     parent.nil?

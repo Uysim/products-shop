@@ -1,7 +1,6 @@
 module Dashboard
   class CategoriesController < AdminController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
-    layout 'admin'
     def index
       @main_categories = Category.main_categories
     end

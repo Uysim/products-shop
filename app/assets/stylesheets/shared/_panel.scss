@@ -1,12 +1,16 @@
 .panel-card {
   @include border-top-radius(0px);
-  @include border-right-radius(0px);
   @include border-bottom-radius(0px);
-  @include border-left-radius(0px);
-  @include border-width(0px);
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  @include border-width(1px);
+
+  @include transition(all 0.3s);
+
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
   & a:hover {
     text-decoration: none;
+  }
+  @media #{$phone}{
+    @include margin(10px null);
   }
   img {
     width: 100%;
@@ -31,5 +35,5 @@
 }
 
 .panel-hover:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 14px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
 }
