@@ -2,7 +2,7 @@
   - @main_categories.each do |main_category|
     .row
       .col-xs-12.category-title
-        %h3.label-category= link_to main_category.name, main_category
+        %h3.label-category= link_to main_category.name, category_products_url(main_category)
       - main_category.feature_products.includes(:images).each do |product|
-        = render 'shared/product', product: product, category: main_category
+        = render 'shared/product', product: product, category: product.category
       .col-xs-12.devider
