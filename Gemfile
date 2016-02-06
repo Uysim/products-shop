@@ -32,11 +32,17 @@ gem "wysiwyg-rails"
 group :development, :test do
   gem 'pry'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'shoulda-matchers',   '~> 2.8.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner',   '~> 1.0'
+  gem 'ffaker'
 end
 
 group :development do
+  gem 'web-console', '~> 2.0'
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-passenger'
   gem 'capistrano-rvm'

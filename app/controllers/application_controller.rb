@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_main_categories
   def set_main_categories
-    @main_categories = Category.where(parent: nil)
+    @main_categories = Category.main_categories.includes(:subcategories)
   end
 end

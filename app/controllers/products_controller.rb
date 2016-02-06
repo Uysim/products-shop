@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
 
   def index
     render :index_with_sub if @category.subcategories.any?
-
   end
 
   def show
@@ -17,6 +16,6 @@ class ProductsController < ApplicationController
     end
 
     def set_category
-      @category = Category.find(params[:category_id])
+      @category = @main_categories.find(params[:category_id])
     end
 end

@@ -5,7 +5,7 @@ module NavbarHelper
   private
     class Navbar
       include Rails.application.routes.url_helpers
-
+      include FontAwesome::Rails::IconHelper
       def initialize(categories, params, view)
         @categories = categories
         @params = params
@@ -45,7 +45,7 @@ module NavbarHelper
           option = {
             class: 'nav navbar-nav'
           }
-          contents = main_category.unshift(home)
+          contents = main_categories.unshift(home)
           content_tag(:ul, safe_join(contents), option)
         end
 
@@ -61,11 +61,28 @@ module NavbarHelper
           content_tag(:li, link)
         end
 
-        def main_category
+        def main_categories
           categories.map do |category|
-            link = link_to category.name, category_products_path(category)
+            contents = []
+            contents << link_to(category.name, category_products_path(category))
+            if category.subcategories.any?
+              # fa_icon('arrow-circle-down')
+              contents << link_to('', 'javascript:void(0)', class: "dropdown-toggle pull-right visible-xs visible-sm", "data-toggle"=>"dropdown", "role"=>"button", "aria-haspopup"=>"true", "aria-expanded"=>"false")
+              contents << subcategories(category.subcategories)
+            end
+            content_tag(:li, safe_join(contents))
+          end
+        end
+
+        def subcategories(categories)
+          option = {
+            class: 'dropdown-menu'
+          }
+          contents = categories.map do |c|
+            link = link_to c.name, category_products_path(c)
             content_tag(:li, link)
           end
+          content_tag(:ul, safe_join(contents), option)
         end
 
         def about

@@ -26,24 +26,101 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    li a {
+      @include padding(5px 15px 5px 30px);
+    }
+  }
 }
 .navbar-default {
+
   @include background($blue);
   .navbar-brand {
     color: white;
     font-weight: bold;
   }
-  .navbar-nav li a {
-    color: white;
-    font-weight: bold;
-  }
-  .navbar-nav li a:hover {
-    @include background($green);
-    color: white;
+
+  .navbar-nav li {
+    a {
+      color: white;
+      font-weight: bold;
+      @include transition(all 0.3s);
+    }
+    a:hover {
+      @media #{$desktop-up}{
+        @include background($green);
+      }
+      color: white;
+    }
+    .dropdown-toggle {
+      z-index: 1000;
+      position: absolute;
+      font-size: 18px;
+      top: 0px;
+      right: 0px;
+    }
+    .dropdown-toggle:before {
+      font-family: FontAwesome;
+      content: '\f0ab'
+    }
+    &.open .dropdown-toggle:before{
+      font-family: FontAwesome;
+      content: '\f0aa'
+    }
+    &.open a, &.open a:hover {
+      @media #{$desktop-down}{
+        display: inline-block;
+        background: transparent !important;
+      }
+    }
   }
 
   .navbar-brand:hover {
     @include background($green);
     color: white;
+  }
+  ul.dropdown-menu {
+    @include background($blue);
+    @include padding(0px null);
+    @include border-top-radius(0px);
+    @include border-bottom-radius(0px);
+    @include border-width(0px);
+    @include transition(all 0.2s);
+    // height: 0;
+    @media #{$desktop-up}{
+      max-height: 0px;
+      display: block;
+      overflow: hidden;
+    }
+    // opacity: 0;
+    li a {
+      @include padding(10px null);
+      color: white;
+    }
+  }
+  ul.nav > li:hover > ul.dropdown-menu{
+    @media #{$desktop-up}{
+      max-height: 1000px;
+      @include border-width(1px);
+    }
+
+    // opacity: 1;
+    //   margin-top: 0px;
+    //   border-radius: 0px;
+    //   padding: 0px;
+    //   width: auto;
+    //   min-width: 100%;
+    //   & > li > a:hover {
+    //     color: white;
+    //     background-color: $hover-color;
+    //   }
+    // }
   }
 }

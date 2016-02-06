@@ -11,6 +11,7 @@
       %ul.nav.navbar-nav
         %li= link_to 'Home', root_url
         - @main_categories.each do |mc|
-          %li= link_to mc.name, category_products_url(mc)
+          %li
+            = link_to mc.name, category_products_url(mc)
       %ul.nav.navbar-nav.navbar-right
         %li= link_to 'About', about_url

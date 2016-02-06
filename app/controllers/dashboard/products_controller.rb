@@ -2,7 +2,6 @@ module Dashboard
   class ProductsController < AdminController
     before_action :set_category
     before_action :set_product, only: [:show, :edit, :update, :destroy]
-    layout 'admin'
 
     def index
       @products = @category.products
@@ -17,6 +16,7 @@ module Dashboard
     end
 
     def edit
+      @product.images.build unless @product.images.any?
     end
 
     def create
