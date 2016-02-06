@@ -3,4 +3,4 @@
     %strong= @category.name
   .row
     - @category.products.each do |product|
-      = render 'shared/product', product: product, category: @category
+      = render 'shared/product', product: product

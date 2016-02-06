@@ -7,10 +7,10 @@
         .col-xs-12.category-title
           %h3.label-category= category.name
         - category.products.includes(:images).each do |product|
-          = render 'shared/product', product: product, category: category
+          = render 'shared/product', product: product
         .col-xs-12.devider
     - if @category.products.any?
       .col-xs-12.category-title
         %h3.label-category Other
       - @category.products.includes(:images).each do |product|
-        = render 'shared/product', product: product, category: @category
+        = render 'shared/product', product: product
