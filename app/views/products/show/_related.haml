@@ -2,5 +2,5 @@
   .row
     .col-xs-12
       %h3 Related Products
-    - @product.related.each do |product|
-      = render 'shared/product', product: product
+    - @product.related.includes(:images).each do |product|
+      = render 'shared/product', product: product, category: product.category
