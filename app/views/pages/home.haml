@@ -4,5 +4,5 @@
       .col-xs-12.category-title
         %h3.label-category= link_to main_category.name, main_category
       - main_category.feature_products.includes(:images).each do |product|
-        = render 'shared/product', product: product
+        = render 'shared/product', product: product, category: main_category
       .col-xs-12.devider
