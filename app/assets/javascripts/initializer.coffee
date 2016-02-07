@@ -15,5 +15,5 @@ GTC.Initializer =
     if @currentPage()
       @exec(@currentPage())
 
-$(document).on 'ready page:load', ->
+$(document).on 'ready', ->
   GTC.Initializer.init()

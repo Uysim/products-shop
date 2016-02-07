@@ -6,6 +6,8 @@
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:charset => "UTF-8"}/
     %title GTC Computer
+    :javascript
+        var analyticId =  "#{ENV['ANALYTIC_ID']}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = favicon_link_tag 'favicon.png'
