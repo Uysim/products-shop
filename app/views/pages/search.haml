@@ -6,6 +6,6 @@
     .col-xs-12.text-center
       = pagination_links @products
     - @products.each do |product|
-      = render 'shared/product', product: product
+      = render 'shared/product', product: product, category: product.category
     .col-xs-12.text-center
       = pagination_links @products

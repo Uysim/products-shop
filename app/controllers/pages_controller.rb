@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   end
 
   def search
-    @products = Product.search(params[:search][:query]).paginate(page: params[:page], per_page: 16)
+    @products = Product.search(params[:search][:query]).paginate(page: params[:page], per_page: 32)
   end
 end
