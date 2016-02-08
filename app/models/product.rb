@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :fields, dependent: :destroy
 
+  validates :images, length: { minimum: 1}
+
   accepts_nested_attributes_for :images, reject_if: lambda{ |i| i[:file].blank?}, allow_destroy: true
   accepts_nested_attributes_for :fields, reject_if: :all_blank, allow_destroy: true
 
@@ -18,6 +20,6 @@ class Product < ActiveRecord::Base
   def self.search(str)
     search_col = ['products.name', 'summary', 'description', 'fields.value']
     search_string = search_col.map { |e| "#{e} LIKE :search" }.join(' OR ')
-    joins(:fields).where(search_string, search: "%#{str}%").uniq
+    includes(:fields).where(search_string, search: "%#{str}%").references(:fields)
   end
 end
