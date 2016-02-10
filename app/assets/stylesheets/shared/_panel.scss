@@ -2,7 +2,6 @@
   @include border-top-radius(0px);
   @include border-bottom-radius(0px);
   @include border-width(1px);
-
   @include transition(all 0.3s);
 
   box-shadow: 0 0 40px rgba(0,0,0,0.1);
@@ -32,6 +31,21 @@
     top: 0px;
     left: 15px;
   }
+  @media #{$phone}{
+    &.panel-products {
+      a{
+        display: table;
+      }
+      img {
+        display: table-cell;
+      }
+      .panel-body {
+        display: table-cell;
+        width: 50%;
+      }
+    }
+  }
+
 }
 
 .panel-hover:hover {

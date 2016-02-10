@@ -1,10 +1,10 @@
 .col-xs-12.col-sm-6.col-md-3
-  .panel.panel-default.panel-card.panel-hover
+  .panel.panel-default.panel-card.panel-products.panel-hover
     - if product.sold?
       %span.label.label-danger.sold Sold
     = link_to [category, product] do
       = image_tag product.images.first.file.thumb.url, class: 'img-responsive'
       .panel-body
-        %h4= product.name
+        %h4= truncate(product.name, length: 40)
         %strong.text-danger= "#{product.price} $"
-        %p.summary= product.summary
+        %p.summary= truncate(product.summary, length: 80)
