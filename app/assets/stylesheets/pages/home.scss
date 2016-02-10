@@ -1,9 +1,13 @@
 body[id='pages-home'] {
   section#products {
     .category-title {
-      border-bottom: 3px solid $blue;
-      @include margin(10px);
-      @include padding(0px);
+      @include margin(10px null);
+      @include padding(0px 10px);
+      hr {
+        @include margin(0px);
+        @include border-color($blue);
+        @include border-width(3px);
+      }
     }
   }
   .label-category {
@@ -23,6 +27,6 @@ body[id='pages-home'] {
     }
   }
   .devider {
-    @include margin(20px);
+    @include margin(20px null);
   }
 }
