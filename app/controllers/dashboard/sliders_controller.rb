@@ -33,7 +33,7 @@ module Dashboard
       def slider_params
         params.require(:slider).permit(
           :name,
-          slider_images_attributes: [:id, :file, :_destroy]
+          slider_images_attributes: [:id, :file, :link_url, :_destroy]
         )
       end
 
