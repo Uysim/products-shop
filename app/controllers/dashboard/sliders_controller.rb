@@ -19,7 +19,6 @@ module Dashboard
     end
 
     def update
-      binding.pry
       if @slider.update(slider_params)
         redirect_to admin_sliders_url, notice: 'Slider was successfully updated.'
       else
