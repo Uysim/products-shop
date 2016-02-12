@@ -19,10 +19,11 @@ module Dashboard
     end
 
     def update
-      if @slider.update_attributes(slider_params)
-        redirect_to admin_sliders_url, notice: 'Slider was successfully created.'
+      binding.pry
+      if @slider.update(slider_params)
+        redirect_to admin_sliders_url, notice: 'Slider was successfully updated.'
       else
-        render :new
+        render :edit
       end
     end
 
