@@ -1,0 +1,9 @@
+%tr.nested-fields
+  %td
+    = f.input :file, label: false
+    = f.input :link_url, label: false
+  %td.thumb
+    - if f.object.file.url.present?
+      = image_tag f.object.file.url
+  %td
+    = link_to_remove_association "X", f, class: 'btn btn-default'

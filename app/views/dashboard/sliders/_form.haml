@@ -1,0 +1,21 @@
+= simple_form_for([:admin, @slider]) do |f|
+  = f.input :name, input_html: { class: 'form-control' }
+  %h3 Images
+  %table.slider-photos.table.table-strip.table-hover
+    %thead
+      %tr
+        %th File
+        %th Thumb
+        %th Action
+    %tbody
+      = f.simple_fields_for :slider_images do |image|
+        = render 'slider_image_fields', f: image
+  .col-xs-12
+    %br
+    = link_to_add_association 'Add Image', f, :slider_images, class: 'btn btn-primary'
+
+  .form-group
+    .col-xs-12
+      %br
+      %br
+      = f.button :submit, class: 'btn btn-primary'

@@ -12,7 +12,7 @@ module Dashboard
 
       def html
         categories = main_categories.map { |c| category_tag(c) }
-        contents   = categories.unshift(dashboard_tag).push(manage_categories)
+        contents   = categories.unshift(dashboard_tag).push([manage_categories, slider])
         # contents
         content_tag(:ul, safe_join(contents), {class: 'sidebar-nav'})
       end
@@ -61,6 +61,11 @@ module Dashboard
         def uncollape?(category)
           sub_active = category.subcategories.pluck(:id).include?(params[:category_id].to_i)
           active?(category) || sub_active || parent?(category.id)
+        end
+
+        def slider
+          link = link_to('Slider', admin_sliders_path)
+          content_tag(:li, link)
         end
     end
   end

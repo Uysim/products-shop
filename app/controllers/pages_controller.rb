@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
+
   def home
+    @slider = Slider.find_by(name: 'Home')
   end
 
   def about
