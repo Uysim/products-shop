@@ -38,7 +38,7 @@ module Dashboard
 
     def destroy
       @product.destroy
-      redirect_to products_url, notice: 'Product was successfully destroyed.'
+      redirect_to admin_category_products_url(@category), notice: 'Product was successfully destroyed.'
     end
 
     def order

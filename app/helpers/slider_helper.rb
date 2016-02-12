@@ -13,9 +13,10 @@ module SliderHelper
     def html
       options = {
         class: 'carousel slide',
-        id: uid
+        id: uid,
+        'data-interval'=>'1000'
       }
-      content = view.safe_join([indicators,slides,controls])
+      content = view.safe_join([indicators, slides, controls])
       view.content_tag(:div, content, options)
     end
 

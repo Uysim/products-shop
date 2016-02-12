@@ -7,4 +7,6 @@
 //= require common
 //= require fanpage
 
+//= require pages/home
+
 //= require initializer

@@ -6,9 +6,8 @@ GTC.Initializer =
   currentPage: ->
     return '' unless $('body').attr('id')
     bodyId = $('body').attr('id').split('-')
-    action = GTC.Util.capitalize(bodyId[2])
-    controller = GTC.Util.capitalize(bodyId[1])
-    module = GTC.Util.capitalize(bodyId[0])
+    action = GTC.Util.capitalize(bodyId[1])
+    controller = GTC.Util.capitalize(bodyId[0])
     controller + action
   init: ->
     @exec('Common')
