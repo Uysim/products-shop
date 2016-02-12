@@ -53,5 +53,10 @@ Category.all.each_with_index do |cate,index|
     product.fields.new(name: 'Hard Disk', value: '2 TB')
     product.save
   end
+end
 
+Category.main_categories.each do |cate|
+  cate_ids = cate.subcategories.ids.unshift(cate.id)
+  feature_products = Product.of(cate_ids).limit(4)
+  feature_products.each { |p| p.update_attributes(feature: true) }
 end

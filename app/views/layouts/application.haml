@@ -15,6 +15,7 @@
   %body{ id: body_id, class: body_class }
     = render 'shared/header'
     = navbar
+    = render 'shared/slider' unless @slider.nil?
     = yield
     = render 'shared/footer'
 

@@ -1,0 +1,19 @@
+%section.container
+  .row
+    .col-xs-12
+      %h1 Slider
+    .col-xs-12
+      = link_to 'New Slider', new_admin_slider_url, class: 'btn btn-primary'
+    .col-xs-12
+      %table.table.table-hover.table-strip
+        %thead
+          %tr
+            %th Name
+            %th Action
+        %tbody
+          - @sliders.each do |slider|
+            %tr
+              %td= slider.name
+              %td
+                = link_to 'Edit', edit_admin_slider_url(slider)
+                = link_to 'Destroy', admin_slider_url(slider), method: :delete, data: { confirm: 'Are you sure?' }

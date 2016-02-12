@@ -32,7 +32,7 @@
 
 //= require dashboard/categories_index
 //= require dashboard/products_index
-
+//= require dashboard/sliders_form
 //= require dashboard/initializer
 
 

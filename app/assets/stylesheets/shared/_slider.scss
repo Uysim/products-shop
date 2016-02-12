@@ -1,0 +1,17 @@
+section#slider{
+  .carousel-control {
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 1);
+  }
+  .carousel-control.left, .carousel-control.right{
+    background: none;
+  }
+  .detail {
+    position: absolute;
+    bottom: 5px;
+    left: 45%;
+    font-size: 20px;
+    @media #{$phone}{
+      font-size: 14px;
+    }
+  }
+}
