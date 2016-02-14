@@ -19,7 +19,7 @@ class Product < ActiveRecord::Base
 
   def self.search(str)
     search_col = ['products.name', 'summary', 'description', 'fields.value']
-    search_string = search_col.map { |e| "#{e} LIKE :search" }.join(' OR ')
-    includes(:fields).where(search_string, search: "%#{str}%").references(:fields)
+    search_string = search_col.map { |e| "lower(#{e}) LIKE :search" }.join(' OR ')
+    includes(:fields).where(search_string, search: "%#{str.downcase}%").references(:fields)
   end
 end
