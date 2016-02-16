@@ -14,7 +14,7 @@ module NavbarHelper
 
       def html
         option = {
-          class: 'navbar navbar-default container'
+          class: 'navbar navbar-default'
         }
         contents = [navbar_header, navbar_collapse]
         container = content_tag(:div, safe_join(contents), {class: 'container-fluid'})

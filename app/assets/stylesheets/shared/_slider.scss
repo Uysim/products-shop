@@ -1,5 +1,8 @@
 section#slider{
   @include margin(30px null);
+  @media #{$phone} {
+    @include margin(10px null);
+  }
   .carousel-control {
     text-shadow: 1px 2px 8px rgba(0, 0, 0, 1);
   }
@@ -17,7 +20,7 @@ section#slider{
     }
   }
   .carousel-indicators {
-    bottom: -30px;
+    bottom: -50px;
     @media #{$phone}{
       display: none;
     }

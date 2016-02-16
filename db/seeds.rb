@@ -60,3 +60,6 @@ Category.main_categories.each do |cate|
   feature_products = Product.of(cate_ids).limit(4)
   feature_products.each { |p| p.update_attributes(feature: true) }
 end
+
+slider = Slider.create(name: 'Home')
+slider.slider_images.create(file: File.open("#{Rails.root}/public/slider.jpg"))
