@@ -6,4 +6,8 @@
         %hr
       - main_category.feature_products.includes(:images).each do |product|
         = render 'shared/product', product: product, category: product.category
-      .col-xs-12.devider
+      .col-xs-12.view-more.text-center
+        = link_to category_products_url(main_category), class: 'button' do
+          %strong View More >
+      .col-xs-12.divider
+

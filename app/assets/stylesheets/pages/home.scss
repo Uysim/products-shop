@@ -26,7 +26,15 @@ body[id='pages-home'] {
       color: white;
     }
   }
-  .devider {
+  .view-more {
     @include margin(20px null);
+    .button {
+      @include padding(10px 20px);
+      @include border-width(2px);
+      @include border-style(solid);
+    }
+  }
+  .divider {
+    @include margin(20px);
   }
 }

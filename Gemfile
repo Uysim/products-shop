@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
 
 gem 'rails', '4.2.2'
 gem 'pg'
@@ -32,7 +31,7 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'launchy'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.3.0'
   gem 'capybara', '~> 2.6.2'
   gem 'shoulda-matchers',   '~> 3.0.0'
   gem 'factory_girl_rails', '~> 4.5.0'
