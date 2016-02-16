@@ -15,10 +15,8 @@ GTC.Common =
     top = navbar.offset().top;
     $(window).scroll ->
       if $(this).scrollTop() > top
-        navbar.removeClass('container')
         navbar.addClass('navbar-fixed-top')
       else
-        navbar.addClass('container')
         navbar.removeClass('navbar-fixed-top')
 
   set_google_analytic: ->

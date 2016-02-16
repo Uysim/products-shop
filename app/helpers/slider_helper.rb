@@ -58,9 +58,7 @@ module SliderHelper
         class: index.zero? ? 'item active' : 'item'
       }
       image_tag = image_tag(image.file.url, class: 'img-responsive')
-      link_tag  = link_to('View Detail >', image.link_url, class: 'detail')
-      contents  = [image_tag, link_tag]
-      content_tag(:div, safe_join(contents), options)
+      content_tag(:div, image_tag, options)
     end
 
     def control_tag(direction)
