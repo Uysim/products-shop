@@ -23,4 +23,8 @@ class Product < ActiveRecord::Base
     search_string = search_col.map { |e| "lower(#{e}) LIKE :search" }.join(' OR ')
     includes(:fields).where(search_string, search: "%#{str.downcase}%").references(:fields)
   end
+
+  def to_param
+    "#{id} #{name}".parameterize
+  end
 end

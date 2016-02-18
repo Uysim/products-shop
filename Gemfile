@@ -24,6 +24,7 @@ gem 'fog',                '~> 1.37.0'
 gem 'asset_sync',         '~> 1.1.0'
 gem 'will_paginate',      '~> 3.0.6'
 gem "cocoon",             '~> 1.2.7'
+gem 'meta-tags',          '~> 2.1.0'
 gem "wysiwyg-rails"
 
 group :development, :test do

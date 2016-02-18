@@ -3,12 +3,12 @@ section#header {
   img.logo {
     margin: 0 auto;
   }
-  .contact {
+  .phone {
+    font-size: 30px;
     @media #{$phone} {
-      h3 {
-        font-size: 16px;
-        @include margin(10px null);
-      }
+
+      font-size: 16px;
+      @include margin(10px null);
     }
   }
   .full-name {

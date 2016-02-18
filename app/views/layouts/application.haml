@@ -5,7 +5,7 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:charset => "UTF-8"}/
-    %title GTC Computer
+    = display_meta_tags
     :javascript
         var analyticId =  "#{ENV['ANALYTIC_ID']}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
