@@ -3,3 +3,21 @@ body[id='dashboard-products-index']{
     cursor: crosshair;
   }
 }
+
+body[id='dashboard-products-edit']{
+  .sortable .dragable {
+    cursor: crosshair;
+  }
+  #category-association {
+    ul {
+      list-style-type: none;
+      margin-left: -20px;
+    }
+    .radio-row{
+      display: flex;
+    }
+    // .col-main{
+    //   display: table-cell;
+    // }
+  }
+}

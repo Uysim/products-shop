@@ -35,9 +35,9 @@
             %th Name
             %th{colspan: "3"} Action
         %tbody.sortable
-          - @category.feature_products.each do |product|
+          - @category.summary_products.includes(:category).each do |product|
             %tr
               %td= product.name
-              %td= link_to 'Show', admin_category_product_url(@category, product)
-              %td= link_to 'Edit', edit_admin_category_product_url(@category, product)
-              %td= link_to 'Destroy', admin_category_product_url(@category, product), method: :delete, data: { confirm: 'Are you sure?' }
+              %td= link_to 'Show', admin_category_product_url(product.category, product)
+              %td= link_to 'Edit', edit_admin_category_product_url(product.category, product)
+              %td= link_to 'Destroy', admin_category_product_url(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }

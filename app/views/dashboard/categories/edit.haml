@@ -1,2 +1,5 @@
 %h1 Editing Category
 = render 'form'
+%br
+%h1 Subcategories
+= render 'categories_panel', heading: @category.name, categories: @category.subcategories, new_url: new_admin_category_url(parent_id: @category.id)

@@ -4,9 +4,7 @@ class Category < ActiveRecord::Base
   belongs_to :parent, class_name: 'Category'
 
   scope :main_categories, -> { where(parent: nil) }
-  # def self.main_categories
-  #   where(parent: nil)
-  # end
+  scope :of, lambda { |ids| where(parent_id: ids) }
 
   def main?
     parent.nil?
@@ -15,12 +13,25 @@ class Category < ActiveRecord::Base
     !parent.nil?
   end
 
+  def subcategories_ids(ids=nil)
+    ids ||= [id]
+    sub_ids = Category.of(ids).ids.unshift(ids).flatten.uniq
+    return ids if ids.sort == sub_ids.sort
+    subcategories_ids(sub_ids)
+
+  end
+
   def all_products
-    ids = subcategories.map(&:id).unshift(id)
-    Product.of(ids)
+    Product.of(subcategories_ids)
   end
 
   def feature_products
     all_products.feature
+  end
+  def summary_products
+    list_products.rows(2)
+  end
+  def list_products
+    all_products.rank
   end
 end

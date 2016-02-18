@@ -20,7 +20,8 @@ main_cats = [
   },
   {
     name: 'Desktop',
-    subcategories: ['Accer', 'Dell', 'Mac']
+    subcategories: ['Accer', 'Dell', 'Mac'],
+    nest_sub: ['Cate 1', 'Cate 2', 'Cate 3']
   },
   {
     name: 'Accessories'
@@ -37,7 +38,12 @@ main_cats.each do |main|
   c = Category.where(name: main[:name]).first_or_create
   if main[:subcategories]
     main[:subcategories].each do |subcategory|
-      c.subcategories.where(name: subcategory).first_or_create
+      sub = c.subcategories.where(name: subcategory).first_or_create
+      if main[:nest_sub]
+        main[:nest_sub].each do |nest|
+          sub.subcategories.where(name: nest).first_or_create
+        end
+      end
     end
   end
 end
