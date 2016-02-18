@@ -23,5 +23,5 @@ Rails.application.routes.draw do
     resources :sliders
   end
 
-
+  get '/robots.txt' => RobotsTxt
 end

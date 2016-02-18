@@ -34,4 +34,8 @@ class Category < ActiveRecord::Base
   def list_products
     all_products.rank
   end
+
+  def to_param
+    "#{id} #{name}".parameterize
+  end
 end
