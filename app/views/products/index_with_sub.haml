@@ -3,16 +3,17 @@
     %strong= @category.name
   .row
     - @category.subcategories.each do |category|
-      - if category.products.any?
+      - if category.summary_products.any?
         .col-xs-12.category-title
           %h3.label-category= category.name
           %hr
-        - category.products.includes(:images).each do |product|
-          = render 'shared/product', product: product, category: category
+        - category.summary_products.includes(:images).each do |product|
+          = render 'shared/product', product: product
+        = render 'view_more', category: category
         .col-xs-12.devider
     - if @category.products.any?
       .col-xs-12.category-title
         %h3.label-category Other
         %hr
-      - @category.products.includes(:images).each do |product|
-        = render 'shared/product', product: product, category: @category
+      - @category.summary_products.includes(:images).each do |product|
+        = render 'shared/product', product: product

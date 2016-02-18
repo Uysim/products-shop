@@ -26,4 +26,12 @@ body[id='products-index'] {
   .devider {
     @include margin(20px null);
   }
+  .view-more {
+    @include margin(20px null);
+    .button {
+      @include padding(10px 20px);
+      @include border-width(2px);
+      @include border-style(solid);
+    }
+  }
 }

@@ -1,4 +1,4 @@
-body[id='dashboard-categories-index']{
+body[id='dashboard-categories-index'], body[id='dashboard-categories-edit'], body[id='dashboard-categories-new']{
   .sortable {
     a {
       @include margin(null 10px);

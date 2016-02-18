@@ -1,0 +1,16 @@
+.panel.panel-primary
+  .panel-heading= heading
+  .panel-body
+    = simple_form_for  :categories ,url: order_admin_categories_url do |f|
+      %ul.sortable.list-group
+        - categories.each do |mc|
+          %li.list-group-item.list-group-item-info
+            = mc.name
+            = link_to admin_category_url(mc), method: :delete, data: { confirm: 'Are you sure?' }, class: 'pull-right text-danger' do
+              = fa_icon 'trash'
+            = link_to edit_admin_category_url(mc, parent_id: mc.parent_id), class: 'pull-right text-danger' do
+              = fa_icon 'pencil'
+            = f.input :ids,as: :hidden, multiple: true, input_html: { multiple: true, value: mc.id }
+      = f.button :submit, 'Submit', class: 'btn btn-primary'
+  .panel-footer
+    = link_to 'New Category', new_url, role: "button"
