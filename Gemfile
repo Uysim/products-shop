@@ -25,7 +25,8 @@ gem 'asset_sync',         '~> 1.1.0'
 gem 'will_paginate',      '~> 3.0.6'
 gem "cocoon",             '~> 1.2.7'
 gem 'meta-tags',          '~> 2.1.0'
-gem "wysiwyg-rails"
+gem 'sitemap_generator',  '~> 5.1.0'
+gem 'wysiwyg-rails',      '~> 2.1.0'
 
 group :development, :test do
   gem 'pry'

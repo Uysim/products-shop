@@ -11,10 +11,13 @@ class RobotsTxt
 
     # if we're not in production env, set the content to disallow all robots
     unless Rails.env.production?
-      # disallow access to the whole site (/) for all agents (*)
-      response.write "User-agent: *\nDisallow: /"
+      content = ["User-agent: *", "Disallow: /"].join("\n")
+      response.write content
     else
-      response.write "User-agent: *\nDisallow:\n"
+      host = env['HTTP_HOST']
+      sitemap = "Sitemap: http://#{host}/sitemaps/#{host.parameterize}.xml.gz"
+      content = ["User-agent: *", "Disallow:", sitemap].join("\n")
+      response.write content
     end
 
     response.finish

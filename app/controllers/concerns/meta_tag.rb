@@ -4,7 +4,7 @@ class MetaTag
     @options = options
     @request = options[:request]
     @meta_tag = {}
-    @base_site = 'gtc-computer'
+    @base_site = 'gtc-computer.com'
     process
   end
 
@@ -24,15 +24,15 @@ class MetaTag
       set_site
       set_keyword
       set_description
-      index
+      set_canonical
     end
 
     def set_site
       meta_tag[:site] = "GTC Computer"
     end
 
-    def index
-      meta_tag[:noindex] = true unless request.host.include?(@base_site)
+    def set_canonical
+      meta_tag[:canonical] = "http://#{@base_site}#{request.path}" if request.host != @base_site
     end
 
     def set_keyword
