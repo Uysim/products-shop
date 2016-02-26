@@ -34,7 +34,5 @@ GTC.Common =
       m.parentNode.insertBefore a, m
       return
     ) window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'
-    ga 'create', analyticId, 'auto', {'allowLinker': true}
-    ga 'require', 'linker'
-    ga 'linker:autoLink', ['gtc-computer.com']
+    ga 'create', analyticId, 'auto'
     ga 'send', 'pageview'
