@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :set_main_categories
 
   def set_main_categories
-    @main_categories = Category.main_categories.includes(:subcategories)
+    @main_categories = Category.main_categories
   end
 end

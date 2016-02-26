@@ -38,10 +38,12 @@
       }
       img {
         display: table-cell;
+        vertical-align: top;
       }
       .panel-body {
         display: table-cell;
         width: 50%;
+        vertical-align: top;
       }
     }
   }

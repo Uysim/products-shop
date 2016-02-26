@@ -2,6 +2,7 @@ module Dashboard
   class ProductsController < AdminController
     before_action :set_category
     before_action :set_product, only: [:show, :edit, :update, :destroy]
+    cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
     def index
       @products = @category.products
@@ -45,6 +46,8 @@ module Dashboard
       order_params[:ids].each do |id|
         @category.products.find(id).touch
       end
+      binding.pry
+      expire_action(category_products_path(@category))
       redirect_to admin_category_products_url(@category)
     end
 

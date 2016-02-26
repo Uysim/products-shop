@@ -12,7 +12,7 @@ describe 'Product Index' do
     it { is_expected.to have_content(main_category.name)}
     it { is_expected.to have_content(category.name)}
     it { is_expected.to have_link(product.name, href: category_product_path(category, product)) }
-    it {save_and_open_page; is_expected.to have_link(nest_product.name, href: category_product_path(nest_category, nest_product)) }
+    it { is_expected.to have_link(nest_product.name, href: category_product_path(nest_category, nest_product)) }
     it { is_expected.to have_link('View More', href: category_products_url(category)) }
   end
 

@@ -1,5 +1,6 @@
-%section#slider.container
-  .row
-    .col-xs-12
-      .panel.panel-default.panel-card
-        = slider(@slider)
+- cache(@slider, skip_digest: true) do
+  %section#slider.container
+    .row
+      .col-xs-12
+        .panel.panel-default.panel-card
+          = slider(@slider)

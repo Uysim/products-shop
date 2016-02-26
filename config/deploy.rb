@@ -7,7 +7,7 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :deploy_to, "/var/www/#{fetch(:application)}"
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets')
 set :linked_files, fetch(:linked_files, []).push('.env')
 
 set :scm, :git

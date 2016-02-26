@@ -1,22 +1,23 @@
-%section#product.container
-  .panel.panel-default.panel-card
-    .panel-body
-      .row
-        .col-xs-12.col-sm-6
-          - if @product.sold?
-            %span.label.label-danger.sold Sold
-          = image_tag @product.images.first.file.url, class: 'img-responsive'
-        .col-xs-12.col-sm-6
-          %h3= @product.name
-          = render 'edit_link' if admin_signed_in?
-          %h4.text-danger= "#{@product.price} $"
-          %br
-          %table.table
-            %tbody
-              - @product.fields.each do |att|
-                %tr
-                  %td
-                    %strong= att.name
-                  %td= att.value
-          %p= raw @product.description
-  = render 'products/show/related'
+- cache([:product, @category, @product]) do
+  %section#product.container
+    .panel.panel-default.panel-card
+      .panel-body
+        .row
+          .col-xs-12.col-sm-6
+            - if @product.sold?
+              %span.label.label-danger.sold Sold
+            = image_tag @product.images.first.file.url, class: 'img-responsive'
+          .col-xs-12.col-sm-6
+            %h3= @product.name
+            = render 'edit_link' if admin_signed_in?
+            %h4.text-danger= "#{@product.price} $"
+            %br
+            %table.table
+              %tbody
+                - @product.fields.each do |att|
+                  %tr
+                    %td
+                      %strong= att.name
+                    %td= att.value
+            %p= raw @product.description
+    = render 'products/show/related'
