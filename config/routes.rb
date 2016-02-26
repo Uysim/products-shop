@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :dashboard, as: :admin do
     get '/', to: 'admin#index'
+    get '/clear_cache', to: 'admin#clear_cache'
     resources :categories do
       collection do
         post 'order'

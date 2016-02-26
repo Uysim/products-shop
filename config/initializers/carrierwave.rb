@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
       region: ENV['FOG_REGION']
     }
     config.fog_directory = ENV["FOG_DIRECTORY"]
-    config.fog_attributes = { 'Cache-Control' => "max-age=#{7.day.to_i}" }
+    config.fog_attributes = { 'Cache-Control' => "public, max-age=31536000" }
   end
 
 end

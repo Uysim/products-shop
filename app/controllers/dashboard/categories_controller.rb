@@ -1,6 +1,7 @@
 module Dashboard
   class CategoriesController < AdminController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
+    cache_sweeper :category_sweeper, :only => [:create, :update, :destroy]
     def index
       @main_categories = Category.main_categories
     end
@@ -41,6 +42,7 @@ module Dashboard
       order_params[:ids].each do |id|
         Category.find(id).touch
       end
+      Rails.cache.clear
       redirect_to admin_categories_url
     end
 

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  caches_action :home, :about, cache_path: Proc.new{ request.path }
   before_action :set_meta
   def home
     @slider = Slider.find_by(name: 'Home')
@@ -17,5 +18,9 @@ class PagesController < ApplicationController
       @meta_tag = MetaTag.new({request: request})
       @meta_tag.set_title(params[:action].capitalize)
       set_meta_tags(@meta_tag.meta_tag)
+    end
+
+    def cache_path
+      request.path
     end
 end

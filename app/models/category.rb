@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   has_many :products,-> { order(:updated_at)}, dependent: :destroy
   belongs_to :parent, class_name: 'Category'
 
-  scope :main_categories, -> { where(parent: nil) }
+  scope :main_categories, -> { where(parent: nil).includes(:subcategories) }
   scope :of, lambda { |ids| where(parent_id: ids) }
 
   def main?

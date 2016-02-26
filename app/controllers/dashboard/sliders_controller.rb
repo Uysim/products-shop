@@ -1,5 +1,6 @@
 module Dashboard
   class SlidersController < AdminController
+    cache_sweeper :slider_sweeper, :only => [:create, :update, :destroy]
     before_action :set_slider, only: [:update, :edit]
     def index
       @sliders = Slider.all

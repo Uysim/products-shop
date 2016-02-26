@@ -17,9 +17,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-    process resize_and_pad: [250,250]
+    process resize_and_pad: [200, 200]
   end
 
+  process :resize_to_fit => [500, -1]
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -49,9 +50,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    original_filename.humanize.parameterize
+  end
   #  def cache_dir
   #   "#{Rails.root}/tmp/uploads"
   # end

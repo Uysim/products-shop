@@ -10,8 +10,6 @@
     = javascript_include_tag 'admin', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-    %script{:src => "//cdn.tinymce.com/4/tinymce.min.js"}
-
   %body{ id: body_id, class: body_class, 'ng-app' => 'AdminApp' }
     #wrapper
       #sidebar-wrapper{ ng: { controller: 'SidebarCtrl' }}
