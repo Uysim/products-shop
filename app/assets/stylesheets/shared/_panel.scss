@@ -24,9 +24,7 @@
   }
   .sold {
     @include border-top-radius(0px);
-    @include border-right-radius(0px);
     @include border-bottom-radius(0px);
-    @include border-left-radius(0px);
     position: absolute;
     top: 0px;
     left: 15px;
@@ -45,6 +43,14 @@
         width: 50%;
         vertical-align: top;
       }
+    }
+  }
+  .label {
+    font-size: 14px;
+    @include border-top-radius(0px);
+    @include border-bottom-radius(0px);
+    &.status-label {
+      @include background($blue);
     }
   }
 
