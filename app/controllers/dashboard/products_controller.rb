@@ -46,7 +46,6 @@ module Dashboard
       order_params[:ids].each do |id|
         @category.products.find(id).touch
       end
-      binding.pry
       expire_action(category_products_path(@category))
       redirect_to admin_category_products_url(@category)
     end
