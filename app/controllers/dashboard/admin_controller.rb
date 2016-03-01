@@ -11,6 +11,11 @@ module Dashboard
       redirect_to admin_path
     end
 
+    def sitemap
+      SiteMap.new(request.host).generate
+      redirect_to admin_path
+    end
+
   end
 
 end
