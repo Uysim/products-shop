@@ -1,0 +1,7 @@
+%ul
+  - categories.each do |category|
+    %li
+      %label
+        = f.radio_button :parent_id, category.id
+        = category.name
+    = render 'radio_categories', categories: category.subcategories, f: f if category.subcategories.any?

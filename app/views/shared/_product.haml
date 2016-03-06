@@ -6,5 +6,8 @@
       = image_tag product.images.first.file.thumb.url, class: 'img-responsive'
       .panel-body
         %h4= truncate(product.name, length: 40)
-        %strong.text-danger= "#{product.price} $"
         %p.summary= truncate(product.summary, length: 80)
+        .label-group
+          .label.label-danger= "#{product.price} $"
+          - unless product.status.blank?
+            .label.label-info.status-label= product.status

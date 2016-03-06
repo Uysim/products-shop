@@ -1,0 +1,15 @@
+.form-group
+  .col-xs-12
+    %br
+    %button.btn.btn-default{type: 'button', 'data-toggle'=>'collapse', 'data-target'=>'#category-association', onclick: "$(this).hide();"} Change Parent
+    #category-association.collapse
+      .row.radio-row
+        - @main_categories.each do |mc|
+          .col-xs-12.col-sm-6.col-md-3.col-main
+            %ul
+              %li
+                %label
+                  = f.radio_button :parent_id, mc.id
+                  = mc.name
+              = render 'radio_categories', categories: mc.subcategories, f: f if mc.subcategories.any?
+

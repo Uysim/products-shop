@@ -1,9 +1,10 @@
 = simple_form_for(@category, url: @category.new_record? ? admin_categories_url : admin_category_url(@category)) do |f|
   = f.error_notification
-  = f.input :parent_id, as: :hidden, input_html: { value: params[:parent_id]}
   .form-group
     = f.input :name, input_html: { class: 'form-control'}
   .form-group
     = f.input :description, input_html: { class: 'form-control'}
+  .form-group
+    = render 'change_parent', f: f unless @category.new_record?
   .form-actions
     = f.button :submit, class: 'btn btn-primary'

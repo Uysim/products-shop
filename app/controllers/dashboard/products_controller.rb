@@ -46,7 +46,6 @@ module Dashboard
       order_params[:ids].each do |id|
         @category.products.find(id).touch
       end
-      binding.pry
       expire_action(category_products_path(@category))
       redirect_to admin_category_products_url(@category)
     end
@@ -58,7 +57,7 @@ module Dashboard
 
       def product_params
         params.require(:product).permit(
-          :name, :price, :category_id, :description, :summary, :sold, :feature,
+          :name, :price, :status, :category_id, :description, :summary, :sold, :feature,
           fields_attributes: [:id, :name, :value,:_destroy],
           images_attributes: [:id, :file, :_destroy]
       )

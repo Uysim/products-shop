@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   caches_action :index, cache_path: Proc.new{ request.path }
-  caches_action :show, cache_path: Proc.new{ request.path }, unless: Proc.new{ admin_signed_in? }
+  caches_action :show, cache_path: Proc.new{ request.path }, if: Proc.new { !admin_signed_in? }
   before_action :set_category
   before_action :set_product, only: [:show]
   before_action :set_meta

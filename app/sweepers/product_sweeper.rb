@@ -10,12 +10,6 @@ class ProductSweeper < ActionController::Caching::Sweeper
 
   private
     def expire_cache(product)
-      expire_action root_path
-      expire_action category_product_path(product.category, product)
-      expire_category_cache(product.category)
-    end
-    def expire_category_cache(category)
-      expire_action category_products_path(category)
-      expire_category_cache(category.parent) unless category.parent.nil?
+      Rails.cache.clear
     end
 end
