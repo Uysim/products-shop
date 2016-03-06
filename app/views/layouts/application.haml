@@ -13,6 +13,7 @@
     = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
   %body{ id: body_id, class: body_class }
+
     = render 'shared/header'
     = render 'shared/navbar'
     = render 'shared/slider' unless @slider.nil?

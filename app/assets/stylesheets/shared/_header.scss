@@ -1,38 +1,13 @@
 section#header {
+  @include margin(10px null);
   position: relative;
   img.logo {
     margin: 0 auto;
-  }
-  .phone {
-    font-size: 30px;
-    @media #{$phone} {
-
-      font-size: 16px;
-      @include margin(10px null);
-    }
-  }
-  .full-name {
-    @media #{$phone} {
-      font-size: 12px;
-    }
+    width: 100%;
   }
   .search {
-    // @media #{$desktop-down}{
-    //   text-align: center;
-    // }
-    @media #{$desktop-up}{
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      form {
-        float: right;
-      }
-    }
     form {
       @include margin(10px null);
-      @media #{$tablet} {
-        float: right;
-      }
     }
     .input {
       display: inline;
