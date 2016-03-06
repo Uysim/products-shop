@@ -1,5 +1,6 @@
 class ProductSweeper < ActionController::Caching::Sweeper
   observe Product
+  include Rails.application.routes.url_helpers
   def after_save(product)
     expire_cache(product)
   end
