@@ -15,5 +15,5 @@
       .col-xs-12.category-title
         %h3.label-category Other
         %hr
-      - @category.summary_products.includes(:images).each do |product|
+      - @category.products.includes(:images).each do |product|
         = render 'shared/product', product: product
