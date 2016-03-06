@@ -1,6 +1,5 @@
 class CategorySweeper < ActionController::Caching::Sweeper
   observe Category
-  include Rails.application.routes.url_helpers
   def after_save(category)
     expire_cache(category)
   end

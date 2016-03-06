@@ -1,6 +1,5 @@
 class SliderSweeper < ActionController::Caching::Sweeper
   observe Slider
-  include Rails.application.routes.url_helpers
   def after_save(slider)
     expire_cache(slider)
   end
@@ -11,7 +10,6 @@ class SliderSweeper < ActionController::Caching::Sweeper
 
   private
     def expire_cache(slider)
-      expire_fragment(slider)
-      expire_action root_path if slider.name=='Home'
+      Rails.cache.clear
     end
 end
