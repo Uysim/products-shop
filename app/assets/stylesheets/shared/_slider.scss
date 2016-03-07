@@ -1,0 +1,38 @@
+ section#slider{
+  @include margin(30px null);
+  @media #{$phone} {
+    @include margin(10px null);
+  }
+  .carousel-control {
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 1);
+  }
+  .carousel-control.left, .carousel-control.right{
+    background: none;
+  }
+  .detail {
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    font-size: 20px;
+    @media #{$phone}{
+      font-size: 14px;
+      bottom: 10px;
+    }
+  }
+  .carousel-indicators {
+    bottom: -50px;
+    @media #{$phone}{
+      display: none;
+    }
+  }
+  .carousel-indicators li {
+    @include margin(1px 2px);
+    @include size(12px);
+    border: none;
+    background-color: $blue-overlay;
+    &.active {
+      @include margin(1px 2px);
+      background-color: $blue;
+    }
+  }
+}
