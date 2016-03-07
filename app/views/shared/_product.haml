@@ -5,8 +5,8 @@
     = link_to category_product_path(product.category, product) do
       = image_tag product.images.first.file.thumb.url, class: 'img-responsive'
       .panel-body
-        %p
-          %strong.pro-name= truncate(product.name, length: 40)
+        %p.pro-name
+          %strong= truncate(product.name, length: 40)
         %p.summary
           %small= truncate(product.summary, length: 80)
           .label-group
