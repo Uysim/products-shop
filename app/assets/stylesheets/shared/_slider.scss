@@ -1,5 +1,5 @@
  section#slider{
-  @include margin(30px null);
+  @include margin(null null 30px null);
   @media #{$phone} {
     @include margin(10px null);
   }
