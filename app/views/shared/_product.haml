@@ -1,13 +1,15 @@
-.col-xs-12.col-sm-6.col-md-4.col-lg-3
+.col-xs-12.col-sm-6.col-md-3.col-lg-2
   .panel.panel-default.panel-card.panel-products.panel-hover
     - if product.sold?
       %span.label.label-danger.sold Sold
     = link_to category_product_path(product.category, product) do
       = image_tag product.images.first.file.thumb.url, class: 'img-responsive'
       .panel-body
-        %h4= truncate(product.name, length: 40)
-        %p.summary= truncate(product.summary, length: 80)
-        .label-group
-          .label.label-danger= "#{product.price} $"
-          - unless product.status.blank?
-            .label.label-info.status-label= product.status
+        %p
+          %strong.pro-name= truncate(product.name, length: 40)
+        %p.summary
+          %small= truncate(product.summary, length: 80)
+          .label-group
+            .label.label-danger= "#{product.price} $"
+            - unless product.status.blank?
+              .label.label-info.status-label= product.status
