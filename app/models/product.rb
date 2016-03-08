@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :fields, reject_if: :all_blank, allow_destroy: true
 
 
-  scope :rows, lambda { |n| limit(n*4) }
+  scope :rows, lambda { |n| limit(n*6) }
   scope :of, lambda { |category_ids| where(category_id: category_ids) }
   scope :feature, -> { where(feature: true) }
   scope :rank, -> { order(feature: :desc, updated_at: :asc) }

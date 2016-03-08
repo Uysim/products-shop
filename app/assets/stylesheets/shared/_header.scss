@@ -1,9 +1,9 @@
 section#header {
   @include margin(10px null);
   position: relative;
-  img.logo {
-    margin: 0 auto;
-    width: 100%;
+  .phone {
+    font-size: 18px;
+    @include margin(10px null);
   }
   .search {
     form {
