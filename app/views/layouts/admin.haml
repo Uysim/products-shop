@@ -16,5 +16,6 @@
         = admin_side_bar(@main_categories)
       %a#menu-toggle{:href => "#menu-toggle"}= fa_icon 'bars', class: 'fa-3x'
       #page-content-wrapper
+        %p= notice
         = yield
 

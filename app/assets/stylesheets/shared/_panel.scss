@@ -16,10 +16,14 @@
     @include padding(-15px);
   }
   .pro-name {
-    min-height: 65px;
+    @media #{$tablet-up}{
+      min-height: 65px;
+    }
   }
   .summary {
-    min-height: 80px;
+    @media #{$tablet-up}{
+      min-height: 80px;
+    }
     color: #333333;
   }
   .sold {
@@ -46,7 +50,6 @@
     }
   }
   .label {
-    font-size: 14px;
     @include border-top-radius(0px);
     @include border-bottom-radius(0px);
     &.status-label {

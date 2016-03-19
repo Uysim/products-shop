@@ -9,6 +9,6 @@ describe 'Search Page' do
     click_button("search-button")
   end
 
-  it { is_expected.to have_link(product.name,href: category_product_path(category, product)) }
+  it { is_expected.to have_link(product.name, href: category_product_path(category, product)) }
 
 end

@@ -2,7 +2,6 @@ module Dashboard
   class ProductsController < AdminController
     before_action :set_category
     before_action :set_product, only: [:show, :edit, :update, :destroy]
-    cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
     def index
       @products = @category.products
@@ -23,6 +22,7 @@ module Dashboard
     def create
       @product = @category.products.new(product_params)
       if @product.save
+        expire_cache
         redirect_to category_product_url(@category, @product), notice: 'Product was successfully created.'
       else
         render :new
@@ -31,6 +31,7 @@ module Dashboard
 
     def update
       if @product.update(product_params)
+        expire_cache
         redirect_to category_product_url(@product.category, @product), notice: 'Product was successfully updated.'
       else
         render :edit
@@ -69,6 +70,16 @@ module Dashboard
 
       def order_params
         params.require(:products)
+      end
+
+      def expire_cache
+        expire_action(category_product_path(@category, @product))
+        expire_category(@category)
+      end
+
+      def expire_category(category)
+        expire_action(category_products_path(category))
+        expire_action(category_products_path(category.parent)) if category.parent.present?
       end
   end
 end

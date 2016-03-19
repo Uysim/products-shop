@@ -1,14 +1,16 @@
 section#header {
   @include margin(10px null);
   position: relative;
-  .phone {
-    font-size: 18px;
+  .header-col {
     @include margin(10px null);
   }
-  .search {
-    form {
-      @include margin(10px null);
+  .phone {
+
+    @media #{$tablet-up}{
+      font-size: 18px;
     }
+  }
+  .search {
     .input {
       display: inline;
     }

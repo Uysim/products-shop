@@ -1,7 +1,7 @@
 module Dashboard
   class CategoriesController < AdminController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
-    cache_sweeper :category_sweeper, :only => [:create, :update, :destroy]
+
     def index
       @main_categories = Category.main_categories
     end
@@ -19,6 +19,7 @@ module Dashboard
     def create
       @category = Category.new(category_params)
       if @category.save
+        Rails.cache.clear
         redirect_to admin_category_products_url(@category), notice: 'Category was successfully created.'
       else
         render :new
@@ -27,6 +28,7 @@ module Dashboard
 
     def update
       if @category.update(category_params)
+        Rails.cache.clear
         redirect_to admin_category_products_url(@category), notice: 'Category was successfully updated.'
       else
         render :edit

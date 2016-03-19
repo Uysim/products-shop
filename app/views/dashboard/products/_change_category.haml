@@ -8,7 +8,9 @@
           .col-xs-12.col-sm-6.col-md-3.col-main
             %ul
               %li
-                = f.radio_button :category_id, mc.id
-                = f.label mc.name
+
+                %label
+                  = f.radio_button :category_id, mc.id
+                  = mc.name
               = render 'radio_categories', categories: mc.subcategories, f: f if mc.subcategories.any?
 

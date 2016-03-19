@@ -1,6 +1,5 @@
 module Dashboard
   class SlidersController < AdminController
-    cache_sweeper :slider_sweeper, :only => [:create, :update, :destroy]
     before_action :set_slider, only: [:update, :edit]
     def index
       @sliders = Slider.all
@@ -13,6 +12,7 @@ module Dashboard
     def create
       @slider = Slider.new(slider_params)
       if @slider.save
+        expire_action(root_path)
         redirect_to admin_sliders_url, notice: 'Slider was successfully created.'
       else
         render :new
@@ -21,6 +21,7 @@ module Dashboard
 
     def update
       if @slider.update(slider_params)
+        expire_action(root_path)
         redirect_to admin_sliders_url, notice: 'Slider was successfully updated.'
       else
         render :edit

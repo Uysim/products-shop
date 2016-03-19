@@ -1,9 +1,11 @@
 %section.container#header
   .row
-    .col-xs-12.col-sm-4.search
+    .col-xs-12.col-sm-4.header-col.search
       = render 'shared/search'
-    .col-xs-12.col-sm-6.phone
+    .col-xs-12.col-sm-4.header-col.phone
       %strong 012 401 301 / 015 77 99 84 / 097 77 444 56
-
+    .col-xs-12.col-sm-4.phone.text-center
+      = link_to 'https://www.facebook.com/glowtechcambodia', target: '_blank' do
+        = fa_icon 'facebook-official 2x'
 
 
