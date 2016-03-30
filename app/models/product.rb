@@ -14,6 +14,8 @@ class Product < ActiveRecord::Base
   scope :feature, -> { where(feature: true) }
   scope :rank, -> { order(feature: :desc, updated_at: :asc) }
 
+  default_scope { order(:sort_order) }
+
   def related
     category.products.where("id != #{id}").rows(1)
   end

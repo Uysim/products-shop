@@ -1,7 +1,6 @@
-- cache([@category, 'related_products']) do
-  %section#related.container
-    .row
-      .col-xs-12
-        %h3 Related Products
-      - @product.related.includes(:images).each do |product|
-        = render 'shared/product', product: product
+%section#related.container
+  .row
+    .col-xs-12
+      %h3 Related Products
+    - @product.related.includes(:images).each do |product|
+      = render 'shared/product', product: product

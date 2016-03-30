@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
   has_many :subcategories, -> { order(:updated_at)}, class_name: 'Category', foreign_key: 'parent_id', dependent: :destroy
-  has_many :products,-> { order(:updated_at)}, dependent: :destroy
+  has_many :products,-> { order(:sort_order) }, dependent: :destroy
   belongs_to :parent, class_name: 'Category'
 
   scope :main_categories, -> { where(parent: nil).includes(:subcategories) }
@@ -18,7 +18,6 @@ class Category < ActiveRecord::Base
     sub_ids = Category.of(ids).ids.unshift(ids).flatten.uniq
     return ids if ids.sort == sub_ids.sort
     subcategories_ids(sub_ids)
-
   end
 
   def all_products
