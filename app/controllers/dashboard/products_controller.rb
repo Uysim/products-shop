@@ -44,8 +44,9 @@ module Dashboard
     end
 
     def order
-      order_params[:ids].each do |id|
-        @category.products.find(id).touch
+      order_params[:ids].each_with_index do |id, index|
+        product = @category.products.find(id)
+        product.update_attributes(sort_order: index)
       end
       expire_action(category_products_path(@category))
       redirect_to admin_category_products_url(@category)
