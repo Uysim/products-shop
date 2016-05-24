@@ -13,4 +13,7 @@ section#product {
     font-size: 20px;
     z-index: 99999;
   }
+  .col-product{
+    @include padding(null 10px);
+  }
 }
