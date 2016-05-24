@@ -10,6 +10,14 @@ section#header {
       font-size: 18px;
     }
   }
+
+  .icon{
+    @include padding(10px 0 0 0);
+    a {
+      display: inline-block;
+      @include margin(0 5px);
+    }
+  }
   .search {
     .input {
       display: inline;
