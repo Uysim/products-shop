@@ -27,9 +27,11 @@ class Category < ActiveRecord::Base
   def feature_products
     all_products.feature
   end
+
   def summary_products
     list_products.rows(3)
   end
+
   def list_products
     all_products.rank
   end

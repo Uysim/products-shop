@@ -11,13 +11,14 @@ class Product < ActiveRecord::Base
 
   scope :rows, lambda { |n| limit(n*6) }
   scope :of, lambda { |category_ids| where(category_id: category_ids) }
-  scope :feature, -> { where(feature: true) }
-  scope :rank, -> { order(feature: :desc, updated_at: :asc) }
+  scope :available, -> { where(sold: false) }
+  scope :rank, -> { available.order(feature: :desc, updated_at: :asc) }
+  scope :feature, -> { available.where(feature: true) }
 
   default_scope { order(:sort_order) }
 
   def related
-    category.products.where("id != #{id}").rows(1)
+    category.products.rank.where("id != #{id}").rows(1)
   end
 
   def self.search(str)

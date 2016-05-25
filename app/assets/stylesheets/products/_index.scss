@@ -9,6 +9,9 @@ body[id='products-index'] {
         @include border-width(3px);
       }
     }
+    .col-product{
+      @include padding(null 10px);
+    }
   }
   .label-category {
     display: inline;
