@@ -15,9 +15,8 @@ class PagesController < ApplicationController
 
   private
     def set_meta
-      @meta_tag = MetaTag.new({request: request})
-      @meta_tag.set_title(params[:action].capitalize)
-      set_meta_tags(@meta_tag.meta_tag)
+      meta_tag = MetaTag.new({request: request})
+      set_meta_tags(meta_tag.meta)
     end
 
     def cache_path

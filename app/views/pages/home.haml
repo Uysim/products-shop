@@ -5,7 +5,21 @@
         %h3.label-category= link_to main_category.name, category_products_url(main_category)
         %hr
       - main_category.summary_products.includes(:images, :category).each do |product|
-        = render 'shared/product', product: product
+        .col-xs-12.col-sm-6.col-md-3.col-lg-2.col-product
+          .panel.panel-default.panel-card.panel-products.panel-hover
+            - if product.sold?
+              %span.label.label-danger.sold Sold
+            = link_to category_product_path(product.category, product) do
+              = image_tag product.image_thumb_url, class: 'img-responsive'
+              .panel-body
+                %p.pro-name
+                  %strong= truncate(product.name, length: 40)
+                %p.summary
+                  %small= truncate(product.summary, length: 80)
+                  .label-group
+                    .label.label-danger= "#{product.price} $"
+                    - unless product.status.blank?
+                      .label.label-info.status-label= product.status
       .col-xs-12.view-more.text-center
         = link_to category_products_url(main_category), class: 'button' do
           %strong View More >

@@ -3,4 +3,19 @@
     %strong= @category.name
   .row
     - @category.products.includes(:images).each do |product|
-      = render 'shared/product', product: product
+      .col-xs-12.col-sm-6.col-md-3.col-lg-2.col-product
+        .panel.panel-default.panel-card.panel-products.panel-hover
+          - if product.sold?
+            %span.label.label-danger.sold Sold
+          = link_to category_product_path(@category, product) do
+            = image_tag product.image_thumb_url, class: 'img-responsive'
+            .panel-body
+              %p.pro-name
+                %strong= truncate(product.name, length: 40)
+              %p.summary
+                %small= truncate(product.summary, length: 80)
+                .label-group
+                  .label.label-danger= "#{product.price} $"
+                  - unless product.status.blank?
+                    .label.label-info.status-label= product.status
+

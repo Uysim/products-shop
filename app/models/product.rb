@@ -30,4 +30,10 @@ class Product < ActiveRecord::Base
   def to_param
     "#{id} #{name}".parameterize
   end
+
+  def image_thumb_url
+    if images.any?
+      images.first.file.thumb.url
+    end
+  end
 end
