@@ -2,7 +2,6 @@
   %h1.text-center
     %strong= @category.name
   .row
-    binding.pry
     - if @category.content_top?
       = render 'category_description'
     - @category.products.includes(:images).each do |product|
