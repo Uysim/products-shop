@@ -3,7 +3,9 @@
   .form-group
     = f.input :name, input_html: { class: 'form-control'}
   .form-group
-    = f.input :description, input_html: { class: 'form-control'}
+    = f.input :description, input_html: { class: 'form-control editable', rows: '30'}
+  .form-group
+    = f.input :content_position, collection: ['Hidden', 'Bottom', 'Top'], input_html: { class: 'form-control'}, prompt: 'Please select content position'
   .form-group
     = render 'change_parent', f: f unless @category.new_record?
   .form-actions

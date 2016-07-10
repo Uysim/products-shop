@@ -54,7 +54,7 @@ module Dashboard
       end
 
       def category_params
-        params.require(:category).permit(:name, :description, :parent_id)
+        params.require(:category).permit(:name, :description, :parent_id, :content_position)
       end
 
       def order_params

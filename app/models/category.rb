@@ -39,4 +39,12 @@ class Category < ActiveRecord::Base
   def to_param
     "#{id} #{name}".parameterize
   end
+
+  def content_top?
+    content_position == 'Top'
+  end
+
+  def content_bottom?
+    content_position == 'Bottom'
+  end
 end

@@ -2,6 +2,9 @@
   %h1.text-center
     %strong= @category.name
   .row
+    binding.pry
+    - if @category.content_top?
+      = render 'category_description'
     - @category.products.includes(:images).each do |product|
       .col-xs-12.col-sm-6.col-md-3.col-lg-2.col-product
         .panel.panel-default.panel-card.panel-products.panel-hover
@@ -18,4 +21,5 @@
                   .label.label-danger= "#{product.price} $"
                   - unless product.status.blank?
                     .label.label-info.status-label= product.status
-
+    - if @category.content_bottom?
+      = render 'category_description'

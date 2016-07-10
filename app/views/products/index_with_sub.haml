@@ -2,6 +2,8 @@
   %h1.text-center
     %strong= @category.name
   .row
+    - if @category.content_top?
+      = render 'category_description'
     - @category.subcategories.each do |category|
       - if category.summary_products.any?
         .col-xs-12.category-title
@@ -47,3 +49,5 @@
                     .label.label-danger= "#{product.price} $"
                     - unless product.status.blank?
                       .label.label-info.status-label= product.status
+    - if @category.content_bottom?
+      = render 'category_description'
