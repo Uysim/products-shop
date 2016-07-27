@@ -10,7 +10,7 @@
     = javascript_include_tag 'admin', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-  %body{ id: body_id, class: body_class, 'ng-app' => 'AdminApp' }
+  %body{ id: body_id, class: body_class }
     #wrapper
       #sidebar-wrapper{ ng: { controller: 'SidebarCtrl' }}
         = admin_side_bar(@main_categories)

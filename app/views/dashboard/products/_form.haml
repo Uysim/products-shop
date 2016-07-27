@@ -9,14 +9,6 @@
     = f.input :status, input_html: { class: 'form-control' }
   .form-group
     = f.input :description, input_html: { class: 'form-control editable', rows: '30' }
-
-
-  .form-group
-    = f.input :summary, input_html: { class: 'form-control' }
-  .form-group
-    = f.simple_fields_for :images do |i|
-      = i.input :file
-
   .form-group
     .col-xs-5
       Name
@@ -29,6 +21,16 @@
       .col-xs-12
         %br
         = link_to_add_association 'Add field', f, :fields, class: 'btn btn-primary'
+
+  .form-group
+    = f.input :summary, input_html: { class: 'form-control' }
+  #images.form-group
+    = f.simple_fields_for :images do |i|
+      = render 'image_fields', f: i
+    .links
+      = link_to_add_association f, :images do
+        = image_tag 'placeholder.png', class: 'image'
+
   = render 'change_category', f: f unless @product.new_record?
 
   .form-group

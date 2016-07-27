@@ -1,0 +1,6 @@
+.nested-fields.product-image
+  = link_to_remove_association f, class: 'btn-delete text-danger' do
+    = fa_icon('trash')
+  = image_tag f.object.file, class: 'image'
+  .hidden
+    = f.input :file, input_html: { class: 'image-file' }

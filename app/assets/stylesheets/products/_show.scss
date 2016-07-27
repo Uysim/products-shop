@@ -16,4 +16,30 @@ section#product {
   .col-product{
     @include padding(null 10px);
   }
+  #product-slide{
+    @include margin(null null 120px null);
+    .carousel-indicators {
+      bottom: -120px;
+    }
+    .carousel-indicators li {
+      @include margin(5px 0);
+      @include border-right-radius(0);    
+      @include border-left-radius(0); 
+      border: 2px solid #FFFFFF;
+      overflow: hidden;
+      border: medium none;
+      float: left;
+      height: 100px;
+      width: 100px;
+    }
+
+    .carousel-indicators li.active{
+      border: 2px solid #428BCA;
+    }
+    .carousel-indicators img {
+      float: left;
+      left: 0;
+      width: 100px;
+    }
+  }
 }

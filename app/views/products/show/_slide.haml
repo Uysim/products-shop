@@ -1,0 +1,12 @@
+#product-slide.carousel.slide
+  / Wrapper for slides
+  .carousel-inner.cont-slider
+    - @product.images.each_with_index do |image, index|
+      .item{ class: ('active' if index == 0)}
+        = image_tag image.file, class: 'img-responsive'
+      
+  - if @product.images.length > 1
+    %ol.carousel-indicators
+      - @product.images.each_with_index do |image, index|
+        %li{"data-slide-to" => index, "data-target" => "#product-slide", class: ('active' if index == 0)}
+          = image_tag image.file

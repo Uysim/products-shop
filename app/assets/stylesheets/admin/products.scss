@@ -4,10 +4,10 @@ body[id='dashboard-products-index']{
   }
 }
 
-body[id='dashboard-products-edit']{
-  .sortable .dragable {
-    cursor: crosshair;
-  }
+body[id='dashboard-products-new'],
+body[id='dashboard-products-create'],
+body[id='dashboard-products-edit'],
+body[id='dashboard-products-update']{
   #category-association {
     ul {
       list-style-type: none;
@@ -16,8 +16,20 @@ body[id='dashboard-products-edit']{
     .radio-row{
       display: flex;
     }
-    // .col-main{
-    //   display: table-cell;
-    // }
   }
+  #images{
+    .image {
+      width: 100px;
+    }
+    .nested-fields, .links {
+      display: inline;
+    }  
+    .btn-delete {
+      position: absolute;
+    }
+    .product-image {
+      position: relative;
+    }
+  }
+  
 }

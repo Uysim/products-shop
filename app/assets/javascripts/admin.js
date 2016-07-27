@@ -28,12 +28,14 @@
 //= require plugins/url.min.js
 
 //= require cocoon
+//= require dashboard/image_preview
 //= require dashboard/namespace
 //= require dashboard/util
 //= require dashboard/common
 
 //= require dashboard/categories_index
 //= require dashboard/products_index
+//= require dashboard/products_form
 //= require dashboard/sliders_form
 //= require dashboard/initializer
 

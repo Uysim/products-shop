@@ -12,11 +12,10 @@ module Dashboard
 
     def new
       @product = @category.products.new
-      @product.images.build
+      @product.fields.build
     end
 
     def edit
-      @product.images.build unless @product.images.any?
     end
 
     def create

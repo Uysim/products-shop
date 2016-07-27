@@ -8,5 +8,7 @@
 //= require fanpage
 
 //= require pages/home
+//= require products/show
+
 
 //= require initializer

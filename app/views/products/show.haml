@@ -5,7 +5,7 @@
         .col-xs-12.col-sm-6
           - if @product.sold?
             %span.label.label-danger.sold Sold
-          = image_tag @product.images.first.file.url, class: 'img-responsive'
+          = render 'products/show/slide'
         .col-xs-12.col-sm-6
           %h3= @product.name
           = render 'edit_link' if admin_signed_in?
