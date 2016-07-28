@@ -38,6 +38,6 @@ body[id='pages-home'] {
     }
   }
   .divider {
-    @include margin(20px);
+    @include margin(20px null);
   }
 }

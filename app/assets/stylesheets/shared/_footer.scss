@@ -10,7 +10,6 @@ footer.footer{
     @include border-color($color);
     @include margin(10px null);
     height: 1px;
-
   }
   .footer-title {
     font-weight: bold;
