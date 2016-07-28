@@ -20,6 +20,7 @@ section#product {
     @include margin(null null 120px null);
     .carousel-indicators {
       bottom: -120px;
+      width: auto;
     }
     .carousel-indicators li {
       @include margin(5px 0);
