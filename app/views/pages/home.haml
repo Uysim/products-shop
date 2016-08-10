@@ -4,7 +4,7 @@
       .col-xs-12.category-title
         %h3.label-category= link_to main_category.name, category_products_url(main_category)
         %hr
-      - main_category.summary_products.includes(:images, :category).each do |product|
+      - main_category.summary_products.includes(:images, :category).latest.each do |product|
         .col-xs-12.col-sm-6.col-md-3.col-lg-2.col-product
           .panel.panel-default.panel-card.panel-products.panel-hover
             - if product.sold?

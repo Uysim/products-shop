@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
   scope :available, -> { where(sold: false) }
   scope :rank, -> { available.order(feature: :desc, updated_at: :asc) }
   scope :feature, -> { available.where(feature: true) }
+  scope :latest, -> { reorder(created_at: :desc) }
 
   default_scope { order(:sort_order) }
 
