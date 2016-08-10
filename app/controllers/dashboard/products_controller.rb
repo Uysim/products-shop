@@ -21,7 +21,7 @@ module Dashboard
     def create
       @product = @category.products.new(product_params)
       if @product.save
-        expire_cache
+        Rails.cache.clear
         redirect_to category_product_url(@category, @product), notice: 'Product was successfully created.'
       else
         render :new
@@ -30,7 +30,7 @@ module Dashboard
 
     def update
       if @product.update(product_params)
-        expire_cache
+        Rails.cache.clear
         redirect_to category_product_url(@product.category, @product), notice: 'Product was successfully updated.'
       else
         render :edit
@@ -39,6 +39,7 @@ module Dashboard
 
     def destroy
       @product.destroy
+      Rails.cache.clear
       redirect_to admin_category_products_url(@category), notice: 'Product was successfully destroyed.'
     end
 
@@ -47,7 +48,7 @@ module Dashboard
         product = @category.products.find(id)
         product.update_attributes(sort_order: index)
       end
-      expire_action(category_products_path(@category))
+      Rails.cache.clear
       redirect_to admin_category_products_url(@category)
     end
 
@@ -70,16 +71,6 @@ module Dashboard
 
       def order_params
         params.require(:products)
-      end
-
-      def expire_cache
-        expire_action(category_product_path(@category, @product))
-        expire_category(@category)
-      end
-
-      def expire_category(category)
-        expire_action(category_products_path(category))
-        expire_action(category_products_path(category.parent)) if category.parent.present?
       end
   end
 end

@@ -37,6 +37,7 @@ module Dashboard
 
     def destroy
       @category.destroy
+      Rails.cache.clear
       redirect_to categories_url, notice: 'Category was successfully destroyed.'
     end
 
