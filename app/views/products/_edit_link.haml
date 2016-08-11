@@ -1,3 +1,16 @@
-= link_to 'Edit',edit_admin_category_product_url(@category, @product)
-%span= " | "
-= link_to 'Destroy', admin_category_product_url(@category, @product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
+.dropdown
+  %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+    = fa_icon'ellipsis-v'
+  %ul.dropdown-menu
+    %li
+      %a{href: '#'}
+        = @product.created_at.strftime('%d %b %y')
+    %li
+      = link_to edit_admin_category_product_url(@category, @product) do
+        = fa_icon 'pencil'
+        Edit
+    %li
+      = link_to admin_category_product_url(@category, @product), method: :delete, data: { confirm: 'Are you sure?' } do
+        = fa_icon 'trash'
+        Destroy
+    
